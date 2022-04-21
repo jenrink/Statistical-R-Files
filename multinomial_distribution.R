@@ -106,3 +106,10 @@ dmultinom(x=c(1,2,1), prob=probabilities)
 
 
 # 5.123 : The National Fire Incident Reporting Service stated that, among residential fires, 73% are in family homes, 20% are in apartments, and 7% are in other types of dwellings. If four residential fires are independently reported on a single day, what is the probability that two are in family homes, one is in an apartment, and one is in another type of dwelling?
+
+probabilities2 <- c(0.73, 0.2, 0.07)
+
+dmultinom(x=c(2,1,1), prob=probabilities2)
+# 0.0895272
+
+# Therefore, the probability that two are in family homes, one is in an apartment, and one is in another type of dwelling is 8.95%.
