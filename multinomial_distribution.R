@@ -85,3 +85,24 @@ chisq.test(Cars93$Type, Cars93$Origin)
 # Warning message:
 #   In chisq.test(Cars93$Type, Cars93$Origin) :
 #   Chi-squared approximation may be incorrect
+
+
+
+# ----- Homework Chapter 5 Applications -----#
+
+# 5.122 : The weights of a population of mice fed on a certain diet since birth are assumed to be normally distributed with μ = 100 and σ = 20 (measurement in grams). Suppose that a random sample of n = 4 mice is taken from this population. Find the probability that
+# a) exactly two weigh between 80 and 100 grams and exactly one weighs more than 100 grams.
+# b) all four mice weigh more than 100 grams.
+
+pnorm(100, 100, 20)   # P(X > 100) = 0.5
+pnorm(100, 100, 20) - pnorm(80, 100, 20)    # P(80 < X < 100) = 0.3413447
+# P(X < 80) = 1-0.5-0.3413447 = 0.1586553
+probabilities <- c(0.5, 0.3413447, 0.1586553)
+
+dmultinom(x=c(1,2,1), prob=probabilities)
+# 0.1109155
+
+# Therefore, the probability that exactly two weigh between 80 and 100 grams and exactly one weighs more than 100 grams is 11.1%.
+
+
+# 5.123 : The National Fire Incident Reporting Service stated that, among residential fires, 73% are in family homes, 20% are in apartments, and 7% are in other types of dwellings. If four residential fires are independently reported on a single day, what is the probability that two are in family homes, one is in an apartment, and one is in another type of dwelling?
